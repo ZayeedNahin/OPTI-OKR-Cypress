@@ -1,0 +1,20 @@
+{
+  "firstName": "Zayeed",
+  "lastName": "Nahin",
+  "email": "zayeed@hotmail.com",
+  "InvalidEmail": "zayeed#mail.com",
+  "gender": "Male",
+  "phone": "1552308133",
+  "InvalidPhone": "746",
+  "NonNumericPhone": "abc",
+  "SpecialCharPhone": "44444#688",
+  "birthMonth": "November",
+  "birthYear": "2000",
+  "birthDay": "16",
+  "subjects": ["Maths", "Computer Science"],
+  "hobbies": ["Music"],
+  "picture": "Images/images.jpg",
+  "address": "Dhaka, Bangladesh",
+  "state": "NCR",
+  "city": "Delhi"
+}
