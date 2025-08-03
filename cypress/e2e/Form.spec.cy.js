@@ -1,3 +1,5 @@
+import "cypress-real-events/support";
+
 describe('Form automation script', () => {
   it('Verify successful form submission with valid data', () => {
     cy.visit('https://demoqa.com/automation-practice-form')
@@ -102,7 +104,7 @@ describe('Form automation script', () => {
     cy.xpath("//input[@id='lastName']").should('exist').click().type(data.lastName)
     cy.xpath("//input[@id='userEmail']").should('exist').click().type(data.email)
     cy.xpath(`//label[normalize-space()='${data.gender}']`).should('exist').click()
-    cy.xpath("//input[@id='userNumber']").should('exist').click().type(data.InvalidPhone).blur()
+    cy.xpath("//input[@id='userNumber']").should('exist').click().realType(data.InvalidPhone)
     cy.xpath("//input[@id='dateOfBirthInput']").should('exist').click().within(() => {
       cy.xpath("//select[@class='react-datepicker__month-select']").select(data.birthMonth)
       cy.xpath("//select[@class='react-datepicker__year-select']").select(data.birthYear)
@@ -123,7 +125,7 @@ describe('Form automation script', () => {
     cy.xpath(`//div[contains(text(),'${data.state}')]`).should('exist').click()
     cy.xpath("//div[contains(text(),'Select City')]").should('exist').click()
     cy.xpath(`//div[contains(text(),'${data.city}')]`).should('exist').click()
-    cy.xpath("//button[@id='submit']").should('exist').click()
+    cy.xpath("//button[@id='submit']").should('exist').realClick()
     cy.xpath("//div[@class='modal-body']").should('not.exist')
     cy.xpath("//input[@id='userNumber']").should('have.css', 'border-color', 'rgb(220, 53, 69)')
    
